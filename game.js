@@ -1,3 +1,5 @@
+
+
 //declare the choices list
 let choices = ["rock","paper","scissors"];
 
@@ -59,58 +61,68 @@ function playRound(playerChoice,computerChoice){
     return
 
 }
-//function to help with user input is correct
-function isValid(input){
-    input = input.toLowerCase();
-    return input=="rock" || input == "paper" || input=="scissors" ?true:false;
-}
 
+//define the buttons
+let rockButton = document.getElementById('rock');
+let paperButton = document.getElementById('paper');
+let scissorsButton = document.getElementById('scissors');
 
+//define the result text so we can modify it
+let resultRoundPara = document.getElementById('round-result');
+
+//define the scores
+
+let computerTracker = document.getElementById('player-score');
+let playerTracker = document.getElementById('computer-score');
+
+//define final result 
+
+let finalResult = document.getElementById('result-game');
 
 //the game function
-function game(){
-    let playerWins = 0 ;
-    let computerWins =0 ;
-    const numberOfRounds = 5;
-    while (numberOfRounds > 0) {
-        let playerChoice=prompt("Rock,paper or scissors?");
-        //to confirm user enters a valid value
-        while (!isValid(playerChoice)){
-            playerChoice=prompt("Pleas choose Rock,paper or scissors")
-        }
-        
-        computerChoice=getComputerChoice();
-        //player wins
-        if(playRound(playerChoice,computerChoice)==="win"){
-            console.log(`the player wins,${playerChoice} beats ${computerChoice}`);
-            playerWins ++;
-        }
-        //computer wins
-        else if ( playRound(playerChoice,computerChoice)=="lose"){
-            console.log(`the computer wins,${computerChoice} beats ${playerChoice}`);
-            computerWins ++;
-        }
-        //draw
-        else if (playRound(playerChoice,computerChoice)=="draw"){
-            console.log("Nobody wins it's a draw");
-        }
-        //when one of the two reach 3wins
-        if (computerWins === 3 || playerWins ===3)
-        {
-            console.log(computerWins<playerWins?"The player beat the computer at the game ,Congratulations !":"The Computer beat the the player at the game ,better luck next time");
-            break;
-        }
-        
 
+let playerWins = 0 ;
+let computerWins =0 ;
+const numberOfRounds = 5;
 
+function game(choice){
+    //computer choice
+    let computerChoice = getComputerChoice();
+    let playerChoice=choice;
+    if (playRound(playerChoice,computerChoice)=="win"){
+        playerWins ++;
+        resultRoundPara.innerText=`The player wins`;
+        playerTracker.innerText=playerWins;
+    }
+    else if (playRound(playerChoice,computerChoice)=="lose"){
+        computerWins ++;
+        resultRoundPara.innerText=`The Computer wins`;
+        computerTracker.innerText=computerWins;
+    }
+    else if (playRound(playerChoice,computerChoice)=="draw"){
+        playerWins ++;
+        resultRoundPara.innerText=`it's a draw`;
+        
+    }
+    if(playerWins == numberOfRounds || computerWins ==numberOfRounds){
+        finalResult.innerText=playerWins<computerWins?"the computer win the match":"the player wins the match";
 
         
-        
-    
 
-        
-    
-}
+    }
 
 }
-game();
+
+
+//game start with click on the buttons
+let resetButton=document.selectElementById('reset');
+
+function reset(){
+    playerWins=0;
+    computerWins=0;
+    computerTracker.innerHTML="0";
+    playerTracker.innerText="0";
+    resultRoundPara.innerText="";
+}
+
+

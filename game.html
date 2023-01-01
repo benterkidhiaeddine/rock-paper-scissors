@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="game.css" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/games" rel="stylesheet">
+    <script src="game.js" defer ></script>
     <title>game</title>
 </head>
 <body>
@@ -16,9 +17,9 @@
     
     <!--Player choice interface-->
     <div class="container images">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+        <button onclick="game('rock')"  id="rock">Rock</button>
+        <button onclick="game('paper')" id="paper">Paper</button>
+        <button onclick="game('scissors')" id="scissors">Scissors</button>
 
     </div>
 
@@ -33,16 +34,16 @@
         </div>
 
         <div class="container">
-            <p>Player Score <span id="player-score">0</span></p>
+            <p>Computer Score <span id="computer-score">0</span></p>
         </div>
     </div>
 
     <!--result of the game-->
-    <div ><p id="result-game"></p></div>
+    <div class="container" ><p id="result-game"></p></div>
 
     <!--Reset the game-->
     <div class="container">
-        <button id="reset">Play again
+        <button onclick="reset()" id="reset">Play again
 
         </button>
     </div>
