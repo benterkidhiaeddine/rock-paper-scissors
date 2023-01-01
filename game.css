@@ -31,5 +31,11 @@ button {
     width : fit-content;
     border-radius: 20px;
     font-size: medium;
+    font-family: 'Games',sans-serif;
     
+}
+a{
+    text-decoration: none;
+    font-family: 'Games',sans-serif;
+    color: black;
 }
