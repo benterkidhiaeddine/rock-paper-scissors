@@ -4,11 +4,32 @@
     box-sizing: border-box;
 }
 
+body{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
 
-
+.Title{
+   font-size: 80px;
+   font-family: 'Games',sans-serif; 
+}
 .container {
     gap : 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+p{
+    font-family: 'Games',sans-serif;
+    font-size: large;
+}
+
+button {
+    background:linear-gradient(90deg,blue,white);
+    padding:5px 20px;
+    width : fit-content;
+    border-radius: 20px;
+    font-size: medium;
+    
 }
