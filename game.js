@@ -86,7 +86,13 @@ let computerWins =0 ;
 const numberOfRounds = 5;
 
 function game(choice){
-    //computer choice
+    if(playerWins == numberOfRounds || computerWins ==numberOfRounds){
+        finalResult.innerText=playerWins<computerWins?"the computer win the match":"the player wins the match";
+
+        
+
+    }
+    else{
     let computerChoice = getComputerChoice();
     let playerChoice=choice;
     if (playRound(playerChoice,computerChoice)=="win"){
@@ -111,6 +117,9 @@ function game(choice){
 
     }
 
+
+    }
+    
 }
 
 
