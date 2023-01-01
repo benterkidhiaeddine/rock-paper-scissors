@@ -18,7 +18,7 @@ function getComputerChoice(){
 //function that plays one round of rock paper scissors
 function playRound(playerChoice,computerChoice){
     if ((playerChoice.toLowerCase() ==="rock") && (computerChoice==="paper")){
-        return "Computer wins!";
+        return "Computer wins!"+computerChoice+" beats "+playerChoice;
 
     }
     else if ((playerChoice.toLowerCase() ==="paper") && (computerChoice==="rock")){
@@ -26,19 +26,19 @@ function playRound(playerChoice,computerChoice){
 
     }
     else if ((playerChoice.toLowerCase() ==="rock") && (computerChoice==="scissors")){
-        return "Player wins!";
+        return "Player wins!"+playerChoice+" beats "+computerChoice;
 
     }
     else if ((playerChoice.toLowerCase() ==="scissors") && (computerChoice==="paper")){
-        return "Player wins!";
+        return "Player wins!"+playerChoice+" beats "+computerChoice;
 
     }
     else if ((playerChoice.toLowerCase() ==="scissors") && (computerChoice==="rock")){
-        return "Computer wins!";
+        return "Computer wins!"+computerChoice+" beats "+playerChoice;
 
     }
     else if ((playerChoice.toLowerCase() ==="paper") && (computerChoice==="scissors")){
-        return "Computer wins!";
+        return "Computer wins!"+computerChoice+" beats "+playerChoice;
 
     }
     else if ((playerChoice.toLowerCase() ==="paper") && (computerChoice==="paper")){
