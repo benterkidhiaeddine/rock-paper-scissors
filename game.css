@@ -39,3 +39,6 @@ a{
     font-family: 'Games',sans-serif;
     color: black;
 }
+.container.buttons button{
+    font-size: 40px;
+}
