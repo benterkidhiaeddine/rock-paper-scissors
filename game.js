@@ -132,6 +132,7 @@ function reset(){
     computerTracker.innerHTML="0";
     playerTracker.innerText="0";
     resultRoundPara.innerText="";
+    finalResult.innerText="";
 }
 
 
