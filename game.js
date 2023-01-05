@@ -19,7 +19,7 @@ function getComputerChoice(){
 
 
 
-//function that plays one round of rock paper scissors if player wins return win otherwise return false , if it's a draw return draw
+//function that decides who won
 function playRound(playerChoice,computerChoice){
     if ((playerChoice ==="rock") && (computerChoice==="paper")){
         return "lose";
@@ -83,10 +83,10 @@ let finalResult = document.getElementById('result-game');
 
 let playerWins = 0 ;
 let computerWins =0 ;
-const numberOfRounds = 5;
-
-function game(choice){
-    if(playerWins == numberOfRounds || computerWins ==numberOfRounds){
+const winsForMatch = 5;
+//function that plays the
+function game(e){
+    if(playerWins == winsForMatch || computerWins ==winsForMatch){
         finalResult.innerText=playerWins<computerWins?"the computer win the match":"the player wins the match";
 
         
@@ -94,7 +94,7 @@ function game(choice){
     }
     else{
     let computerChoice = getComputerChoice();
-    let playerChoice=choice;
+    let playerChoice=e.target.id;
     if (playRound(playerChoice,computerChoice)=="win"){
         playerWins ++;
         resultRoundPara.innerText=`The player wins`;
@@ -106,11 +106,10 @@ function game(choice){
         computerTracker.innerText=computerWins;
     }
     else if (playRound(playerChoice,computerChoice)=="draw"){
-        playerWins ++;
         resultRoundPara.innerText=`it's a draw`;
         
     }
-    if(playerWins == numberOfRounds || computerWins ==numberOfRounds){
+    if(playerWins == winsForMatch || computerWins ==winsForMatch){
         finalResult.innerText=playerWins<computerWins?"the computer win the match":"the player wins the match";
 
         
@@ -122,9 +121,9 @@ function game(choice){
     
 }
 
-
+document.addEventListener("click",game)
 //game start with click on the buttons
-let resetButton=document.selectElementById('reset');
+let resetButton=document.getElementById('reset');
 
 function reset(){
     playerWins=0;
